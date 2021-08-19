@@ -24,6 +24,8 @@ public:
     UFUNCTION()
     void MoveForward(float AxisValue);
 
+    void MoveSide(float AxisValue);
+
 protected:
     UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = "Components")
     UStaticMeshComponent* BodyMesh;
@@ -38,7 +40,7 @@ protected:
     UCameraComponent* Camera;
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Movement|Speed")
-    float MoveSpeed = 100.f;
+    float MoveSpeed = 700.f;
     
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Movement|Speed")
     float RotationSpeed = 100.f;
@@ -52,4 +54,5 @@ public:
 
 private:
     float TargetForwardAxisValue;
+    float TargetSideAxisValue;
 };
